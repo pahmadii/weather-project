@@ -1,0 +1,49 @@
+
+<html >
+<head>
+   
+    <title>weather</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css">
+</head>
+<body>
+<div class="container">
+
+<h1>node app</h1>
+<form action="/weather" method="get">
+<input type="text" name="city" placeholder="enter city">
+<button type="submit">get weather</button>
+</form>
+ <% if (error){ %>
+    <p class="error"><%=error%></p>
+ <% } else if (weather){ %>
+ <div class="cards">
+  <p>
+    <i class="fas fa-temperature-low"></i>
+    <%=weather.main.temp%>&deg;F
+  </p>
+  <p>
+    <i class="fas fa-cloud" style="color: #63E6BE;"></i>
+    <%=weather.weather[0].description%>
+  </p>
+
+<p>
+    <i class="fas fa-map-marker-alt" style="color: #FFD43B;"></i>
+   <%= weather.name%>,<%=weather.sys.country%>
+</p>
+
+
+
+
+ </div>
+
+
+<% } %>
+
+
+
+</div>
+
+
+</body>
+</html>
